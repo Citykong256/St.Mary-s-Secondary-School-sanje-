@@ -1,454 +1,522 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>St. Mary's Secondary School Sanje</title>
+
 <style>
 :root {
-  --blue:#082d83;
-  --gold:#ffca05;
-  --light:#f4f7fc;
+    --primary: #0b6b35;
+    --dark: #06451f;
+    --gold: #ffc107;
+    --light: #f4fff7;
+    --white: #ffffff;
+    --text: #222222;
 }
-*{box-sizing:border-box}
-body{
- margin:0;
- font-family:Arial,sans-serif;
- background:var(--light);
- color:#14234a;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
-.top{
- background:var(--blue);
- color:white;
- padding:12px;
- display:flex;
- justify-content:space-around;
- flex-wrap:wrap;
- gap:10px;
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.6;
 }
-header{
- background:white;
- padding:18px;
- text-align:center;
+
+header {
+    background: var(--primary);
+    color: white;
+    padding: 15px;
+    text-align: center;
 }
-header img{
- width:100px;
- height:100px;
- object-fit:contain;
+
+.school-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
-header h1{
- color:var(--blue);
- margin:8px;
- font-size:27px;
+
+.school-header img {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
 }
-.motto{
- color:var(--blue);
- font-weight:bold;
- letter-spacing:2px;
+
+.school-header h1 {
+    font-size: 25px;
 }
-nav{
- background:var(--blue);
- display:flex;
- flex-wrap:wrap;
- justify-content:center;
+
+.motto {
+    color: var(--gold);
+    font-weight: bold;
+    margin-top: 5px;
+    letter-spacing: 1px;
 }
-nav a{
- color:white;
- padding:14px;
- text-decoration:none;
- font-weight:bold;
+
+nav {
+    background: var(--dark);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-nav a:hover{
- background:var(--gold);
- color:black;
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 13px 15px;
+    font-weight: bold;
 }
-.hero{
- background:linear-gradient(90deg,#082d83eF,#082d8360),
- url('school-building.jpg') center/cover;
- min-height:350px;
- padding:55px 5%;
- color:white;
- display:flex;
- align-items:center;
+
+nav a:hover {
+    background: var(--gold);
+    color: black;
 }
-.hero h2{
- font-size:clamp(32px,5vw,55px);
- color:var(--gold);
+
+.hero {
+    min-height: 380px;
+    background:
+      linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+      url("school-photo1.jpg") center/cover no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
 }
-.hero p{
- font-size:23px;
- font-style:italic;
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
 }
-.btn{
- display:inline-block;
- padding:12px 22px;
- background:var(--gold);
- color:black;
- border-radius:25px;
- text-decoration:none;
- font-weight:bold;
- border:none;
- cursor:pointer;
+
+.hero p {
+    font-size: 18px;
 }
-section{
- padding:40px 5%;
- scroll-margin-top:15px;
+
+.hero a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: var(--gold);
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
 }
-section h2{
- text-align:center;
- color:var(--blue);
+
+section {
+    padding: 45px 20px;
+    max-width: 1100px;
+    margin: auto;
 }
-.intro{
- text-align:center;
- line-height:1.6;
+
+section h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 25px;
+    font-size: 28px;
 }
-.grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:16px;
+
+section p {
+    margin-bottom: 12px;
 }
-.card{
- background:white;
- padding:20px;
- border-radius:12px;
- box-shadow:0 3px 12px #0001;
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 }
-.card h3{color:var(--blue)}
-.tiles{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
- gap:12px;
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px #00000012;
+    text-align: center;
 }
-.tile{
- background:var(--blue);
- color:white;
- padding:20px 10px;
- text-align:center;
- border-radius:10px;
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
 }
-.tile strong{
- display:block;
- color:var(--gold);
- margin-bottom:8px;
+
+.uniform-images,
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
 }
-select,input,textarea{
- width:100%;
- padding:12px;
- margin:8px 0;
- border:1px solid #bbb;
- border-radius:7px;
+
+.uniform-images img,
+.gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
 }
-.center{text-align:center}
-.score{
- font-size:38px;
- color:var(--blue);
- font-weight:bold;
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 15px;
 }
-footer{
- background:var(--blue);
- color:white;
- text-align:center;
- padding:28px;
- border-top:7px solid var(--gold);
+
+th, td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: center;
 }
-footer strong{color:var(--gold)}
-.pinned{
- color:green;
- font-weight:bold;
+
+th {
+    background: var(--primary);
+    color: white;
 }
-@media(max-width:600px){
- header h1{font-size:21px}
- nav a{padding:10px;font-size:12px}
- .hero{min-height:300px}
+
+.news-item {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--gold);
+    border-radius: 5px;
+}
+
+.contact-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contact-box a {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* Floating WhatsApp button */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 22px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px #0005;
+    z-index: 9999;
+    text-decoration: none;
+    transition: transform .2s;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+.floating-whatsapp svg {
+    width: 35px;
+    height: 35px;
+    fill: white;
+}
+
+@media (max-width: 600px) {
+    .school-header h1 {
+        font-size: 20px;
+    }
+
+    .hero h2 {
+        font-size: 27px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    section {
+        padding: 35px 15px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 7px 4px;
+    }
 }
 </style>
 </head>
+
 <body>
 
-<div class="top">
- <span>☎ 0765840578 | 0748098496</span>
- <span>✉ citykong01@gmail.com</span>
- <span>📍 Sanje, Kyotera, Uganda</span>
-</div>
-
+<!-- SCHOOL HEADER -->
 <header>
- <img src="school-logo.png" alt="School Logo">
- <h1>ST. MARY'S SECONDARY SCHOOL SANJE</h1>
- <p class="motto">HE WHO STRUGGLES WINS</p>
+    <div class="school-header">
+        <img src="school-logo.png" alt="St Mary's School Logo">
+
+        <div>
+            <h1>ST. MARY'S SECONDARY SCHOOL SANJE</h1>
+            <p class="motto">HE WHO STRUGGLES WINS</p>
+        </div>
+    </div>
 </header>
 
+<!-- NAVIGATION -->
 <nav>
- <a href="#home">Home</a>
- <a href="#about">About Us</a>
- <a href="#academics">Academics</a>
- <a href="#admissions">Admissions</a>
- <a href="#timetables">Timetables</a>
- <a href="#examinations">Examinations</a>
- <a href="#clubs">Clubs & Catholic Movements</a>
- <a href="#uce">UCE Results</a>
- <a href="#news">News</a>
- <a href="#gallery">Gallery</a>
- <a href="#contact">Contact</a>
- <a href="#admin">Administration</a>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#academics">Academics</a>
+    <a href="#uniform">Uniform</a>
+    <a href="#timetable">Timetable</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
 </nav>
 
+<!-- HOME -->
 <div class="hero" id="home">
- <div>
-  <h2>Welcome to St. Mary's Secondary School Sanje</h2>
-  <p>HE WHO STRUGGLES WINS</p>
-  <a href="#about" class="btn">Learn More →</a>
- </div>
+    <div>
+        <h2>WELCOME TO ST. MARY'S SECONDARY SCHOOL SANJE</h2>
+        <p>Committed to academic excellence, discipline and character development.</p>
+        <a href="#about">Discover Our School</a>
+    </div>
 </div>
 
+<!-- ABOUT -->
 <section id="about">
- <h2>About Our School</h2>
- <p class="intro">
- Welcome to St. Mary's Secondary School Sanje.
- Our motto is HE WHO STRUGGLES WINS.
- </p>
- <div class="grid">
-  <div class="card">
-   <h3>Our Mission</h3>
-   <p>Official school mission statement to be added.</p>
-  </div>
-  <div class="card">
-   <h3>Our Vision</h3>
-   <p>Official school vision statement to be added.</p>
-  </div>
-  <div class="card">
-   <h3>Our Values</h3>
-   <p>Faith, discipline and excellence.</p>
-  </div>
- </div>
+    <h2>ABOUT OUR SCHOOL</h2>
+
+    <p>
+        St. Mary's Secondary School Sanje is committed to providing
+        quality education and developing responsible, disciplined
+        and hardworking students.
+    </p>
+
+    <p>
+        We believe in academic excellence, moral values, discipline,
+        teamwork and the development of every learner.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Our Vision</h3>
+            <p>To develop responsible and successful learners who contribute positively to society.</p>
+        </div>
+
+        <div class="card">
+            <h3>Our Mission</h3>
+            <p>To provide quality education and promote academic, moral and personal development.</p>
+        </div>
+
+        <div class="card">
+            <h3>Our Motto</h3>
+            <p><strong>HE WHO STRUGGLES WINS</strong></p>
+        </div>
+    </div>
 </section>
 
+<!-- ACADEMICS -->
 <section id="academics">
- <h2>Academics</h2>
- <div class="tiles">
-  <div class="tile"><strong>O-LEVEL</strong>S1 – S4</div>
-  <div class="tile"><strong>A-LEVEL</strong>S5 – S6</div>
- </div>
+    <h2>ACADEMICS</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Lower Secondary</h3>
+            <p>Senior One</p>
+            <p>Senior Two</p>
+            <p>Senior Three</p>
+            <p>Senior Four</p>
+        </div>
+
+        <div class="card">
+            <h3>Upper Secondary</h3>
+            <p>Senior Five</p>
+            <p>Senior Six</p>
+        </div>
+
+        <div class="card">
+            <h3>Academic Excellence</h3>
+            <p>We encourage hard work, commitment, discipline and continuous improvement.</p>
+        </div>
+    </div>
 </section>
 
-<section id="admissions">
- <h2>Admissions</h2>
- <p class="intro">
- Contact the school for admission information.
- </p>
- <div class="center">
-  <a class="btn" href="tel:0765840578">Call the School</a>
- </div>
+<!-- UNIFORM -->
+<section id="uniform">
+    <h2>SCHOOL UNIFORM</h2>
+
+    <p style="text-align:center;">
+        Our school uniform promotes identity, unity and discipline.
+    </p>
+
+    <div class="uniform-images">
+        <div class="card">
+            <img src="boys-uniform.jpg" alt="Boys School Uniform">
+            <h3>Boys' Uniform</h3>
+        </div>
+
+        <div class="card">
+            <img src="girls-uniform.jpg" alt="Girls School Uniform">
+            <h3>Girls' Uniform</h3>
+        </div>
+    </div>
 </section>
 
-<section id="timetables">
- <h2>Class Timetables</h2>
- <p class="intro">
- Select your class and stream to access its specific timetable.
- </p>
- <div class="card">
-  <label>Select Class</label>
-  <select id="classSelect" onchange="updateStreams()">
-   <option>S1</option><option>S2</option>
-   <option>S3</option><option>S4</option>
-   <option>S5</option><option>S6</option>
-  </select>
-  <label>Select Stream / Section</label>
-  <select id="streamSelect"></select>
-  <button class="btn" onclick="showTimetable()">View Timetable</button>
-  <div id="timetableOutput">
-   Select your class and stream.
-  </div>
- </div>
+<!-- TIMETABLE -->
+<section id="timetable">
+    <h2>CLASS TIMETABLES</h2>
+
+    <p style="text-align:center;">
+        Students can use this section to access their class timetables.
+        Timetables should be confirmed with the school administration.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Senior One</h3>
+            <p>Green | Blue | Yellow | White</p>
+        </div>
+
+        <div class="card">
+            <h3>Senior Two</h3>
+            <p>Green | Blue | Yellow | White</p>
+        </div>
+
+        <div class="card">
+            <h3>Senior Three</h3>
+            <p>Green | Blue | Yellow | White</p>
+        </div>
+
+        <div class="card">
+            <h3>Senior Four</h3>
+            <p>Green | Blue | Yellow | White</p>
+        </div>
+
+        <div class="card">
+            <h3>Senior Five</h3>
+            <p>Senior Five Class Timetable</p>
+        </div>
+
+        <div class="card">
+            <h3>Senior Six</h3>
+            <p>Senior Six Class Timetable</p>
+        </div>
+    </div>
+
+    <p style="text-align:center; margin-top:20px;">
+        <strong>Note:</strong> The school will provide the official timetable for each class and stream.
+    </p>
 </section>
 
-<section id="examinations">
- <h2>Student Examinations</h2>
- <p class="intro">
- Access examination papers and tests pinned by the school.
- </p>
- <div class="card">
-  <span class="pinned">📌 PINNED EXAMINATIONS</span>
-  <div id="examList">
-   No examinations have been published yet.
-  </div>
- </div>
-</section>
-
-<section id="clubs">
- <h2>Clubs & Catholic Movements</h2>
- <p class="intro">
- Explore school clubs and Catholic movements.
- Their official details will be updated by the school.
- </p>
- <div class="tiles">
-  <div class="tile"><strong>Clubs</strong>Details coming soon</div>
-  <div class="tile"><strong>Catholic Movements</strong>Details coming soon</div>
-  <div class="tile"><strong>Activities</strong>Details coming soon</div>
-  <div class="tile"><strong>Membership</strong>Details coming soon</div>
- </div>
-</section>
-
-<section id="uce">
- <h2>UCE Results Corner</h2>
- <p class="intro">The school's overall average score only.</p>
- <div class="card center">
-  <h3>UCE AVERAGE SCORE</h3>
-  <div class="score" id="averageScore">Not yet published</div>
-  <p id="scoreYear"></p>
- </div>
-</section>
-
-<section id="news">
- <h2>News & Announcements</h2>
- <div class="grid" id="newsList">
-  <div class="card">
-   <h3>School News</h3>
-   <p>Announcements will appear here.</p>
-  </div>
- </div>
-</section>
-
+<!-- GALLERY -->
 <section id="gallery">
- <h2>School Gallery</h2>
- <p class="intro">
- School photographs and activities will appear here.
- </p>
- <div class="grid">
-  <div class="card">School Buildings</div>
-  <div class="card">School Activities</div>
-  <div class="card">Students</div>
- </div>
+    <h2>SCHOOL GALLERY</h2>
+
+    <div class="gallery">
+        <img src="school-photo1.jpg" alt="School Photo 1">
+        <img src="school-photo2.jpg" alt="School Photo 2">
+        <img src="school-photo3.jpg" alt="School Photo 3">
+        <img src="school-photo4.jpg" alt="School Photo 4">
+    </div>
 </section>
 
+<!-- NEWS -->
+<section id="news">
+    <h2>NEWS AND ANNOUNCEMENTS</h2>
+
+    <div class="news-item">
+        <h3>Welcome to Our School Website</h3>
+        <p>
+            Welcome to the official website of St. Mary's Secondary School Sanje.
+            Visit this section for school news and announcements.
+        </p>
+    </div>
+
+    <div class="news-item">
+        <h3>School Updates</h3>
+        <p>
+            Important school updates and announcements will be shared here.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
- <h2>Contact Us</h2>
- <div class="grid">
-  <div class="card">
-   <h3>Telephone</h3>
-   <p><a href="tel:0765840578">0765840578</a></p>
-   <p><a href="tel:0748098496">0748098496</a></p>
-  </div>
-  <div class="card">
-   <h3>Email</h3>
-   <a href="mailto:citykong01@gmail.com">citykong01@gmail.com</a>
-  </div>
-  <div class="card">
-   <h3>WhatsApp</h3>
-   <a class="btn" href="https://wa.me/256748098496">
-    Chat on WhatsApp
-   </a>
-  </div>
-  <div class="card">
-   <h3>Our Location</h3>
-   <p>Sanje, Kyotera, Uganda</p>
-   <a class="btn" target="_blank"
-   href="https://maps.app.goo.gl/ZgQm38gTh9jjJv2r6">
-   Get Directions
-   </a>
-  </div>
- </div>
+    <h2>CONTACT US</h2>
+
+    <div class="contact-box">
+        <h3>St. Mary's Secondary School Sanje</h3>
+
+        <p>Phone: <a href="tel:+256748098496">+256 748 098 496</a></p>
+
+        <p>Phone: <a href="tel:+256765840578">0765 840 578</a></p>
+
+        <p>
+            Email:
+            <a href="mailto:citykong01@gmail.com">citykong01@gmail.com</a>
+        </p>
+
+        <p>
+            WhatsApp:
+            <a href="https://wa.me/256748098496" target="_blank" rel="noopener">
+                Chat with the school
+            </a>
+        </p>
+    </div>
 </section>
 
-<section id="admin">
- <h2>Administration Dashboard</h2>
- <p class="intro">
- Administration interface preview for managing school content.
- </p>
- <div class="card">
-  <h3>Update UCE Average Score</h3>
-  <input id="scoreInput" placeholder="Enter average score">
-  <input id="yearInput" placeholder="Examination year">
-  <button class="btn" onclick="previewScore()">Update Preview</button>
-
-  <h3>Post Announcement</h3>
-  <textarea id="newsInput" placeholder="Enter announcement"></textarea>
-  <button class="btn" onclick="previewNews()">Post Preview</button>
-
-  <h3>Pin an Examination</h3>
-  <input id="examInput" placeholder="Examination title">
-  <input id="examLink" placeholder="Examination paper link">
-  <button class="btn" onclick="previewExam()">Pin Preview</button>
-
-  <p><small>
-  This is a demonstration dashboard, not a secure
-  administrator system. Real publishing requires
-  administrator authentication and a database.
-  </small></p>
- </div>
-</section>
-
+<!-- FOOTER -->
 <footer>
- <strong>ST. MARY'S SECONDARY SCHOOL SANJE</strong>
- <p>HE WHO STRUGGLES WINS</p>
- <p>Faith • Discipline • Excellence</p>
- <p>© 2026 All Rights Reserved</p>
+    <p><strong>ST. MARY'S SECONDARY SCHOOL SANJE</strong></p>
+    <p>HE WHO STRUGGLES WINS</p>
+    <p>Committed to Excellence in Education</p>
+    <p>&copy; 2026 St. Mary's Secondary School Sanje. All Rights Reserved.</p>
 </footer>
 
-<script>
-function updateStreams(){
- const cls=document.getElementById("classSelect").value;
- const streams=(cls==="S5"||cls==="S6")
- ?["Sciences","Arts"]
- :["Green","Blue","Yellow","White"];
- document.getElementById("streamSelect").innerHTML=
- streams.map(s=>`<option>${s}</option>`).join("");
-}
-updateStreams();
+<!-- FLOATING WHATSAPP BUTTON -->
+<a
+    href="https://wa.me/256748098496"
+    class="floating-whatsapp"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat with St Mary's Secondary School on WhatsApp">
 
-function showTimetable(){
- const cls=document.getElementById("classSelect").value;
- const stream=document.getElementById("streamSelect").value;
- document.getElementById("timetableOutput").innerHTML=
- `<h3>${cls} ${stream} Timetable</h3>
- <p>The official timetable will be uploaded by the school.</p>`;
-}
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16.02 3C8.85 3 3.02 8.82 3.02 15.98c0 2.3.61 4.55 1.77 6.54L3 29l6.65-1.74a13 13 0 0 0 6.37 1.66h.01C23.2 28.92 29 23.1 29 15.94 29 8.8 23.17 3 16.02 3zm0 23.73h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-3.95 1.03 1.05-3.85-.26-.42a10.72 10.72 0 0 1-1.65-5.76c0-5.92 4.82-10.73 10.74-10.73 2.87 0 5.56 1.12 7.59 3.15a10.66 10.66 0 0 1 3.14 7.58c0 5.93-4.82 10.74-10.75 10.74zm5.9-8.04c-.32-.16-1.9-.94-2.2-1.05-.3-.1-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.27-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.58-1.6-.95-.84-1.6-1.9-1.79-2.22-.19-.32-.02-.5.14-.66.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.1-.21.05-.4-.03-.56-.08-.16-.73-1.76-1-2.4-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.3.32-1.12 1.1-1.12 2.69 0 1.59 1.15 3.12 1.31 3.33.16.22 2.27 3.46 5.5 4.85.77.33 1.37.53 1.84.68.77.25 1.47.22 2.02.13.62-.1 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37z"/>
+    </svg>
+</a>
 
-function previewScore(){
- const score=document.getElementById("scoreInput").value;
- const year=document.getElementById("yearInput").value;
- if(!score){alert("Enter the average score.");return;}
- document.getElementById("averageScore").textContent=score;
- document.getElementById("scoreYear").textContent=
- year?"UCE "+year:"";
-}
-
-function previewNews(){
- const news=document.getElementById("newsInput").value;
- if(!news){alert("Enter an announcement.");return;}
- const card=document.createElement("div");
- card.className="card";
- const heading=document.createElement("h3");
- heading.textContent="School Announcement";
- const paragraph=document.createElement("p");
- paragraph.textContent=news;
- card.append(heading,paragraph);
- document.getElementById("newsList").replaceChildren(card);
-}
-
-function previewExam(){
- const title=document.getElementById("examInput").value;
- const link=document.getElementById("examLink").value;
- if(!title){alert("Enter examination title.");return;}
- const area=document.getElementById("examList");
- area.replaceChildren();
- const heading=document.createElement("h3");
- heading.textContent=title;
- const label=document.createElement("p");
- label.textContent="📌 PINNED";
- label.className="pinned";
- area.append(heading,label);
- if(link && link.startsWith("https://")){
-  const a=document.createElement("a");
-  a.href=link;
-  a.target="_blank";
-  a.rel="noopener";
-  a.textContent="Open Examination Paper";
-  a.className="btn";
-  area.append(a);
- }
-}
-</script>
 </body>
   </html>
-                               
