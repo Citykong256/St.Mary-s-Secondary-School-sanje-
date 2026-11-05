@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>St. Mary's Secondary School Sanje</title>
+<style>
+:root {
+  --blue:#082d83;
+  --gold:#ffca05;
+  --light:#f4f7fc;
+}
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:var(--light);
+ color:#14234a;
+}
+.top{
+ background:var(--blue);
+ color:white;
+ padding:12px;
+ display:flex;
+ justify-content:space-around;
+ flex-wrap:wrap;
+ gap:10px;
+}
+header{
+ background:white;
+ padding:18px;
+ text-align:center;
+}
+header img{
+ width:100px;
+ height:100px;
+ object-fit:contain;
+}
+header h1{
+ color:var(--blue);
+ margin:8px;
+ font-size:27px;
+}
+.motto{
+ color:var(--blue);
+ font-weight:bold;
+ letter-spacing:2px;
+}
+nav{
+ background:var(--blue);
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+}
+nav a{
+ color:white;
+ padding:14px;
+ text-decoration:none;
+ font-weight:bold;
+}
+nav a:hover{
+ background:var(--gold);
+ color:black;
+}
+.hero{
+ background:linear-gradient(90deg,#082d83eF,#082d8360),
+ url('school-building.jpg') center/cover;
+ min-height:350px;
+ padding:55px 5%;
+ color:white;
+ display:flex;
+ align-items:center;
+}
+.hero h2{
+ font-size:clamp(32px,5vw,55px);
+ color:var(--gold);
+}
+.hero p{
+ font-size:23px;
+ font-style:italic;
+}
+.btn{
+ display:inline-block;
+ padding:12px 22px;
+ background:var(--gold);
+ color:black;
+ border-radius:25px;
+ text-decoration:none;
+ font-weight:bold;
+ border:none;
+ cursor:pointer;
+}
+section{
+ padding:40px 5%;
+ scroll-margin-top:15px;
+}
+section h2{
+ text-align:center;
+ color:var(--blue);
+}
+.intro{
+ text-align:center;
+ line-height:1.6;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:16px;
+}
+.card{
+ background:white;
+ padding:20px;
+ border-radius:12px;
+ box-shadow:0 3px 12px #0001;
+}
+.card h3{color:var(--blue)}
+.tiles{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+ gap:12px;
+}
+.tile{
+ background:var(--blue);
+ color:white;
+ padding:20px 10px;
+ text-align:center;
+ border-radius:10px;
+}
+.tile strong{
+ display:block;
+ color:var(--gold);
+ margin-bottom:8px;
+}
+select,input,textarea{
+ width:100%;
+ padding:12px;
+ margin:8px 0;
+ border:1px solid #bbb;
+ border-radius:7px;
+}
+.center{text-align:center}
+.score{
+ font-size:38px;
+ color:var(--blue);
+ font-weight:bold;
+}
+footer{
+ background:var(--blue);
+ color:white;
+ text-align:center;
+ padding:28px;
+ border-top:7px solid var(--gold);
+}
+footer strong{color:var(--gold)}
+.pinned{
+ color:green;
+ font-weight:bold;
+}
+@media(max-width:600px){
+ header h1{font-size:21px}
+ nav a{padding:10px;font-size:12px}
+ .hero{min-height:300px}
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+ <span>☎ 0765840578 | 0748098496</span>
+ <span>✉ citykong01@gmail.com</span>
+ <span>📍 Sanje, Kyotera, Uganda</span>
+</div>
+
+<header>
+ <img src="school-logo.png" alt="School Logo">
+ <h1>ST. MARY'S SECONDARY SCHOOL SANJE</h1>
+ <p class="motto">HE WHO STRUGGLES WINS</p>
+</header>
+
+<nav>
+ <a href="#home">Home</a>
+ <a href="#about">About Us</a>
+ <a href="#academics">Academics</a>
+ <a href="#admissions">Admissions</a>
+ <a href="#timetables">Timetables</a>
+ <a href="#examinations">Examinations</a>
+ <a href="#clubs">Clubs & Catholic Movements</a>
+ <a href="#uce">UCE Results</a>
+ <a href="#news">News</a>
+ <a href="#gallery">Gallery</a>
+ <a href="#contact">Contact</a>
+ <a href="#admin">Administration</a>
+</nav>
+
+<div class="hero" id="home">
+ <div>
+  <h2>Welcome to St. Mary's Secondary School Sanje</h2>
+  <p>HE WHO STRUGGLES WINS</p>
+  <a href="#about" class="btn">Learn More →</a>
+ </div>
+</div>
+
+<section id="about">
+ <h2>About Our School</h2>
+ <p class="intro">
+ Welcome to St. Mary's Secondary School Sanje.
+ Our motto is HE WHO STRUGGLES WINS.
+ </p>
+ <div class="grid">
+  <div class="card">
+   <h3>Our Mission</h3>
+   <p>Official school mission statement to be added.</p>
+  </div>
+  <div class="card">
+   <h3>Our Vision</h3>
+   <p>Official school vision statement to be added.</p>
+  </div>
+  <div class="card">
+   <h3>Our Values</h3>
+   <p>Faith, discipline and excellence.</p>
+  </div>
+ </div>
+</section>
+
+<section id="academics">
+ <h2>Academics</h2>
+ <div class="tiles">
+  <div class="tile"><strong>O-LEVEL</strong>S1 – S4</div>
+  <div class="tile"><strong>A-LEVEL</strong>S5 – S6</div>
+ </div>
+</section>
+
+<section id="admissions">
+ <h2>Admissions</h2>
+ <p class="intro">
+ Contact the school for admission information.
+ </p>
+ <div class="center">
+  <a class="btn" href="tel:0765840578">Call the School</a>
+ </div>
+</section>
+
+<section id="timetables">
+ <h2>Class Timetables</h2>
+ <p class="intro">
+ Select your class and stream to access its specific timetable.
+ </p>
+ <div class="card">
+  <label>Select Class</label>
+  <select id="classSelect" onchange="updateStreams()">
+   <option>S1</option><option>S2</option>
+   <option>S3</option><option>S4</option>
+   <option>S5</option><option>S6</option>
+  </select>
+  <label>Select Stream / Section</label>
+  <select id="streamSelect"></select>
+  <button class="btn" onclick="showTimetable()">View Timetable</button>
+  <div id="timetableOutput">
+   Select your class and stream.
+  </div>
+ </div>
+</section>
+
+<section id="examinations">
+ <h2>Student Examinations</h2>
+ <p class="intro">
+ Access examination papers and tests pinned by the school.
+ </p>
+ <div class="card">
+  <span class="pinned">📌 PINNED EXAMINATIONS</span>
+  <div id="examList">
+   No examinations have been published yet.
+  </div>
+ </div>
+</section>
+
+<section id="clubs">
+ <h2>Clubs & Catholic Movements</h2>
+ <p class="intro">
+ Explore school clubs and Catholic movements.
+ Their official details will be updated by the school.
+ </p>
+ <div class="tiles">
+  <div class="tile"><strong>Clubs</strong>Details coming soon</div>
+  <div class="tile"><strong>Catholic Movements</strong>Details coming soon</div>
+  <div class="tile"><strong>Activities</strong>Details coming soon</div>
+  <div class="tile"><strong>Membership</strong>Details coming soon</div>
+ </div>
+</section>
+
+<section id="uce">
+ <h2>UCE Results Corner</h2>
+ <p class="intro">The school's overall average score only.</p>
+ <div class="card center">
+  <h3>UCE AVERAGE SCORE</h3>
+  <div class="score" id="averageScore">Not yet published</div>
+  <p id="scoreYear"></p>
+ </div>
+</section>
+
+<section id="news">
+ <h2>News & Announcements</h2>
+ <div class="grid" id="newsList">
+  <div class="card">
+   <h3>School News</h3>
+   <p>Announcements will appear here.</p>
+  </div>
+ </div>
+</section>
+
+<section id="gallery">
+ <h2>School Gallery</h2>
+ <p class="intro">
+ School photographs and activities will appear here.
+ </p>
+ <div class="grid">
+  <div class="card">School Buildings</div>
+  <div class="card">School Activities</div>
+  <div class="card">Students</div>
+ </div>
+</section>
+
+<section id="contact">
+ <h2>Contact Us</h2>
+ <div class="grid">
+  <div class="card">
+   <h3>Telephone</h3>
+   <p><a href="tel:0765840578">0765840578</a></p>
+   <p><a href="tel:0748098496">0748098496</a></p>
+  </div>
+  <div class="card">
+   <h3>Email</h3>
+   <a href="mailto:citykong01@gmail.com">citykong01@gmail.com</a>
+  </div>
+  <div class="card">
+   <h3>WhatsApp</h3>
+   <a class="btn" href="https://wa.me/256748098496">
+    Chat on WhatsApp
+   </a>
+  </div>
+  <div class="card">
+   <h3>Our Location</h3>
+   <p>Sanje, Kyotera, Uganda</p>
+   <a class="btn" target="_blank"
+   href="https://maps.app.goo.gl/ZgQm38gTh9jjJv2r6">
+   Get Directions
+   </a>
+  </div>
+ </div>
+</section>
+
+<section id="admin">
+ <h2>Administration Dashboard</h2>
+ <p class="intro">
+ Administration interface preview for managing school content.
+ </p>
+ <div class="card">
+  <h3>Update UCE Average Score</h3>
+  <input id="scoreInput" placeholder="Enter average score">
+  <input id="yearInput" placeholder="Examination year">
+  <button class="btn" onclick="previewScore()">Update Preview</button>
+
+  <h3>Post Announcement</h3>
+  <textarea id="newsInput" placeholder="Enter announcement"></textarea>
+  <button class="btn" onclick="previewNews()">Post Preview</button>
+
+  <h3>Pin an Examination</h3>
+  <input id="examInput" placeholder="Examination title">
+  <input id="examLink" placeholder="Examination paper link">
+  <button class="btn" onclick="previewExam()">Pin Preview</button>
+
+  <p><small>
+  This is a demonstration dashboard, not a secure
+  administrator system. Real publishing requires
+  administrator authentication and a database.
+  </small></p>
+ </div>
+</section>
+
+<footer>
+ <strong>ST. MARY'S SECONDARY SCHOOL SANJE</strong>
+ <p>HE WHO STRUGGLES WINS</p>
+ <p>Faith • Discipline • Excellence</p>
+ <p>© 2026 All Rights Reserved</p>
+</footer>
+
+<script>
+function updateStreams(){
+ const cls=document.getElementById("classSelect").value;
+ const streams=(cls==="S5"||cls==="S6")
+ ?["Sciences","Arts"]
+ :["Green","Blue","Yellow","White"];
+ document.getElementById("streamSelect").innerHTML=
+ streams.map(s=>`<option>${s}</option>`).join("");
+}
+updateStreams();
+
+function showTimetable(){
+ const cls=document.getElementById("classSelect").value;
+ const stream=document.getElementById("streamSelect").value;
+ document.getElementById("timetableOutput").innerHTML=
+ `<h3>${cls} ${stream} Timetable</h3>
+ <p>The official timetable will be uploaded by the school.</p>`;
+}
+
+function previewScore(){
+ const score=document.getElementById("scoreInput").value;
+ const year=document.getElementById("yearInput").value;
+ if(!score){alert("Enter the average score.");return;}
+ document.getElementById("averageScore").textContent=score;
+ document.getElementById("scoreYear").textContent=
+ year?"UCE "+year:"";
+}
+
+function previewNews(){
+ const news=document.getElementById("newsInput").value;
+ if(!news){alert("Enter an announcement.");return;}
+ const card=document.createElement("div");
+ card.className="card";
+ const heading=document.createElement("h3");
+ heading.textContent="School Announcement";
+ const paragraph=document.createElement("p");
+ paragraph.textContent=news;
+ card.append(heading,paragraph);
+ document.getElementById("newsList").replaceChildren(card);
+}
+
+function previewExam(){
+ const title=document.getElementById("examInput").value;
+ const link=document.getElementById("examLink").value;
+ if(!title){alert("Enter examination title.");return;}
+ const area=document.getElementById("examList");
+ area.replaceChildren();
+ const heading=document.createElement("h3");
+ heading.textContent=title;
+ const label=document.createElement("p");
+ label.textContent="📌 PINNED";
+ label.className="pinned";
+ area.append(heading,label);
+ if(link && link.startsWith("https://")){
+  const a=document.createElement("a");
+  a.href=link;
+  a.target="_blank";
+  a.rel="noopener";
+  a.textContent="Open Examination Paper";
+  a.className="btn";
+  area.append(a);
+ }
+}
+</script>
+</body>
+  </html>
+                               
